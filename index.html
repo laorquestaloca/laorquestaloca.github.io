@@ -6,7 +6,6 @@
     <title>La Orquesta Loca</title>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* ---- Reset y configuración del gradiente ---- */
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +19,7 @@
                 #2ecc71 33%,   
                 #3498db 66%,    
                 #e84393 100%    
-            ) fixed; /* Fijar gradiente para evitar repetición */
+            ) fixed;
             font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
@@ -28,7 +27,6 @@
             padding: 20px;
         }
 
-        /* ---- Contenedor principal mejorado ---- */
         .container {
             width: 100%;
             max-width: 600px;
@@ -39,42 +37,31 @@
             margin: 20px;
         }
 
-        /* ---- Logo perfectamente responsive ---- */
         .logo {
-            width: min(180px, 40vw);
-            height: min(180px, 40vw);
+            width: min(200px, 45vw);
+            height: min(200px, 45vw);
             border-radius: 50%;
             border: 3px solid #fff;
-            margin: 0 auto 25px;
+            margin: 0 auto 30px;
             display: block;
             object-fit: cover;
             object-position: center;
         }
 
-        /* ---- Textos optimizados ---- */
         h1 {
             font-family: 'Bungee', cursive;
             color: #2d3436;
-            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            font-size: clamp(2rem, 6vw, 2.8rem);
             text-align: center;
-            margin-bottom: 25px;
-            line-height: 1.2;
+            margin-bottom: 35px;
+            line-height: 1.1;
         }
 
-        .frases p {
-            font-size: clamp(1.2rem, 4vw, 1.4rem);
-            color: #2d3436;
-            margin: 12px 0;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        /* ---- Botones redes sociales ultra-responsive ---- */
         .redes-sociales {
             display: grid;
-            gap: 15px;
+            gap: 18px;
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
             margin: 0 auto;
         }
 
@@ -82,43 +69,37 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: clamp(12px, 4vw, 16px);
-            border-radius: 12px;
-            font-size: clamp(1rem, 4vw, 1.1rem);
+            padding: clamp(14px, 4vw, 18px);
+            border-radius: 15px;
+            font-size: clamp(1.1rem, 4vw, 1.2rem);
             font-weight: bold;
             text-decoration: none;
             transition: transform 0.2s;
             border: 2px solid rgba(0,0,0,0.1);
         }
 
-        .btn:active {
-            transform: scale(0.98);
-        }
-
-        /* Colores mejorados con contraste */
+        /* Colores actualizados */
         .facebook { background: #1877f2; color: white; }
         .instagram { background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); color: white; }
         .whatsapp { background: #25d366; color: white; }
-        .spotify { background: #1db954; color: white; }
+        .spotify { background: #14833a; color: white; } /* Verde más oscuro */
 
         .btn i {
-            margin-right: 10px;
-            font-size: clamp(1.2rem, 5vw, 1.4rem);
+            margin-right: 12px;
+            font-size: clamp(1.3rem, 5vw, 1.5rem);
         }
 
-        /* ---- Media queries avanzadas ---- */
         @media (min-width: 768px) {
             .container {
-                padding: 40px;
+                padding: 50px;
                 margin: 40px;
             }
             .redes-sociales {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+                gap: 25px;
             }
             .btn {
-                padding: 18px 25px;
-                font-size: 1.1rem;
+                padding: 20px 30px;
             }
         }
     </style>
@@ -126,13 +107,9 @@
 </head>
 <body>
     <div class="container">
-        <img src="<a href="https://ibb.co/xkdJjf5"><img src="https://i.ibb.co/6MLgP1s/orquesta-loca.jpg" alt="orquesta-loca" border="0"></a>" alt="" class="logo">
+        <!-- Imagen optimizada - Asegúrate de usar una de 800x800px -->
+        <img src="<a href="https://ibb.co/xkdJjf5"><img src="https://i.ibb.co/6MLgP1s/orquesta-loca.jpg" alt="orquesta-loca" border="0"></a>" class="logo">
         
-        <div class="frases">
-            <p>BALANDO HASTA AMANECER</p>
-            <p>LA QUE TOKA Y TOKA</p>
-        </div>
-
         <h1>¡CONÉCTATE CON LA FIESTA!</h1>
 
         <div class="redes-sociales">
