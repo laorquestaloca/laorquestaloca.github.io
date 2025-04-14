@@ -6,92 +6,119 @@
     <title>La Orquesta Loca - Salsa y Cumbia</title>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* ---- Estilo Tropical ---- */
+        /* ---- Fondo degradado + motivos tropicales ---- */
         body {
-            background: #ff6b6b; /* Base coral */
-            background-image: url('https://img.freepik.com/vector-gratis/fondo-tropical-estilo-plano_23-2148917401.jpg');
-            background-size: cover;
+            background: linear-gradient(to right, 
+                #FFD700,    /* Amarillo */
+                #2ecc71,    /* Verde */
+                #3498db,    /* Azul */
+                #e84393     /* Rosa */
+            );
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
             padding: 20px;
-            animation: moveBg 20s linear infinite;
+            position: relative;
+            overflow: hidden;
         }
 
-        @keyframes moveBg {
-            0% { background-position: 0 0; }
-            100% { background-position: 100% 100%; }
+        /* Motivos de fiesta (confeti) */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/confetti.png'); /* Textura de confeti */
+            opacity: 0.1;
+            z-index: 0;
         }
 
-        /* ---- Logo Circular Tropical ---- */
+        /* ---- Logo circular (sin leyenda) ---- */
         .logo {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 4px solid #FFD700;
-            box-shadow: 0 0 20px #FF4500;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
             margin: 20px auto;
+            display: block;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
         }
 
-        /* ---- Título Mejorado ---- */
+        /* ---- Título mejorado ---- */
         h1 {
             font-family: 'Bungee', cursive;
-            color: #FFD700;
-            font-size: 3rem;
-            text-shadow: 3px 3px 0 #FF4500;
+            color: #2d3436;
+            font-size: 2.5rem;
+            text-align: center;
             margin: 15px 0;
+            position: relative;
+            z-index: 2;
         }
 
-        /* ---- Botones 3D Tropicales ---- */
+        /* ---- Botones 3D (colores originales de redes) ---- */
         .btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 80%;
             max-width: 300px;
             margin: 20px auto;
             padding: 15px;
             border: none;
-            border-radius: 15px;
+            border-radius: 10px;
             font-family: 'Poppins', sans-serif;
             font-weight: bold;
-            font-size: 1.2rem;
-            text-transform: uppercase;
+            font-size: 1.1rem;
+            color: white;
+            text-decoration: none;
             cursor: pointer;
             position: relative;
-            transition: all 0.3s;
-            transform-style: preserve-3d;
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.2);
-            border-radius: 15px;
-            top: 5px;
-            left: 0;
-            transform: translateZ(-1px);
+            z-index: 2;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.2); /* Efecto 3D */
         }
 
         .btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 rgba(0,0,0,0.2);
         }
 
-        /* Colores Neón con Toque Tropical */
-        .facebook { background: #25D366; color: #fff; } /* Verde WhatsApp para tropical twist */
-        .instagram { background: linear-gradient(45deg, #FF00FF, #FF8C00); color: #fff; } /* Magenta-Naranja */
-        .whatsapp { background: #FF4500; color: #fff; } /* Rojo coral */
-        .spotify { background: #00FF00; color: #000; } /* Verde limón */
+        /* Colores originales de redes + íconos */
+        .facebook { background: #1877f2; }
+        .instagram { background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); }
+        .whatsapp { background: #25d366; }
+        .spotify { background: #1db954; }
+
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
     </style>
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <img src="<a href="https://ibb.co/VpYw0vfL"><img src="https://i.ibb.co/S7wfDKF6/Whats-App-Image-2025-04-13-at-9-49-02-PM-1.jpg" alt="Whats-App-Image-2025-04-13-at-9-49-02-PM-1" border="0"></a>" alt="Logo Orquesta" class="logo">
+        <!-- Asegúrate de que la URL del logo sea correcta -->
+        <img src="<a href="https://ibb.co/xkdJjf5"><img src="https://i.ibb.co/6MLgP1s/orquesta-loca.jpg" alt="orquesta-loca" border="0"></a>" alt="" class="logo"> <!-- Alt vacío para ocultar texto -->
         <h1>¡CONÉCTATE CON LA FIESTA!</h1>
         
-        <a href="https://www.facebook.com/share/18r737pbnk/" class="btn facebook">Facebook</a>
-        <a href="https://www.instagram.com/laorquestaloca?igsh=MWM0YmhiNGlubHU4Mg==" class="btn instagram">Instagram</a>
-        <a href="https://api.whatsapp.com/send?phone=%2B525530254974" class="btn whatsapp">WhatsApp</a>
-        <a href="https://open.spotify.com/artist/0SJWwOFAr0Eq16DaDgDxwH?si=j51rUMudR5-rUz5gLCGnKw" class="btn spotify">Spotify</a>
+        <a href="https://www.facebook.com/share/18r737pbnk/" class="btn facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <a href="https://www.instagram.com/laorquestaloca?igsh=MWM0YmhiNGlubHU4Mg==" class="btn instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=%2B525530254974" class="btn whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://open.spotify.com/artist/0SJWwOFAr0Eq16DaDgDxwH?si=j51rUMudR5-rUz5gLCGnKw" class="btn spotify">
+            <i class="fab fa-spotify"></i> Spotify
+        </a>
     </div>
 </body>
 </html>
