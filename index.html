@@ -3,111 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Orquesta Loca - Tropical</title>
+    <title>La Orquesta Loca</title>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* ---- Fondo festivo ---- */
+        /* ---- Reset y configuración del gradiente ---- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            min-height: 100vh;
             background: linear-gradient(to right, 
                 #FFD700 0%,    
-                #2ecc71 30%,   
-                #3498db 60%,    
+                #2ecc71 33%,   
+                #3498db 66%,    
                 #e84393 100%    
-            );
+            ) fixed; /* Fijar gradiente para evitar repetición */
             font-family: 'Poppins', sans-serif;
-            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            position: relative;
-            overflow-x: hidden;
         }
 
-        /* Elementos tropicales */
-        .decoracion {
-            position: absolute;
-            opacity: 0.10;
-            z-index: 0;
-        }
-
-        .palmera-izq {
-            width: 120px;
-            left: -30px;
-            top: 50px;
-            transform: rotate(-20deg);
-            animation: balanceo 4s ease-in-out infinite;
-        }
-
-        .trompeta-der {
-            width: 100px;
-            right: -20px;
-            top: 40%;
-            animation: flotar 3s ease-in-out infinite;
-        }
-
-        .confeti {
-            background: url('https://www.transparenttextures.com/patterns/confetti.png');
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0.1;
-        }
-
-        /* Animaciones */
-        @keyframes balanceo {
-            0%, 100% { transform: rotate(-20deg) translateY(0); }
-            50% { transform: rotate(-25deg) translateY(-10px); }
-        }
-
-        @keyframes flotar {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        /* ---- Contenido principal ---- */
+        /* ---- Contenedor principal mejorado ---- */
         .container {
-            position: relative;
-            z-index: 2;
+            width: 100%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.93);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin: 20px;
         }
 
+        /* ---- Logo perfectamente responsive ---- */
         .logo {
-            width: 180px;
-            height: 180px;
+            width: min(180px, 40vw);
+            height: min(180px, 40vw);
             border-radius: 50%;
             border: 3px solid #fff;
-            box-shadow: 0 0 25px rgba(0,0,0,0.3);
-            margin: 20px auto;
+            margin: 0 auto 25px;
             display: block;
             object-fit: cover;
+            object-position: center;
         }
 
-        /* ... (Mantén el resto de estilos anteriores de textos y botones) ... */
+        /* ---- Textos optimizados ---- */
+        h1 {
+            font-family: 'Bungee', cursive;
+            color: #2d3436;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
 
+        .frases p {
+            font-size: clamp(1.2rem, 4vw, 1.4rem);
+            color: #2d3436;
+            margin: 12px 0;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* ---- Botones redes sociales ultra-responsive ---- */
+        .redes-sociales {
+            display: grid;
+            gap: 15px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(12px, 4vw, 16px);
+            border-radius: 12px;
+            font-size: clamp(1rem, 4vw, 1.1rem);
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s;
+            border: 2px solid rgba(0,0,0,0.1);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Colores mejorados con contraste */
+        .facebook { background: #1877f2; color: white; }
+        .instagram { background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); color: white; }
+        .whatsapp { background: #25d366; color: white; }
+        .spotify { background: #1db954; color: white; }
+
+        .btn i {
+            margin-right: 10px;
+            font-size: clamp(1.2rem, 5vw, 1.4rem);
+        }
+
+        /* ---- Media queries avanzadas ---- */
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px;
+                margin: 40px;
+            }
+            .redes-sociales {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .btn {
+                padding: 18px 25px;
+                font-size: 1.1rem;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Decoraciones tropicales -->
-    <img src="https://cdn-icons-png.flaticon.com/512/785/785116.png" class="decoracion palmera-izq" alt="">
-    <img src="https://cdn-icons-png.flaticon.com/512/3203/3203986.png" class="decoracion trompeta-der" alt="">
-    <div class="confeti"></div>
-
-    <!-- Contenido -->
     <div class="container">
         <img src="<a href="https://ibb.co/xkdJjf5"><img src="https://i.ibb.co/6MLgP1s/orquesta-loca.jpg" alt="orquesta-loca" border="0"></a>" alt="" class="logo">
         
-        <div class="banner-text">
+        <div class="frases">
             <p>BALANDO HASTA AMANECER</p>
             <p>LA QUE TOKA Y TOKA</p>
         </div>
 
         <h1>¡CONÉCTATE CON LA FIESTA!</h1>
-        
-        <!-- Botones redes sociales -->
-        <a href="https://www.facebook.com/share/18r737pbnk/" class="btn facebook"><!-- ... --></a>
-        <a href="https://www.instagram.com/laorquestaloca?igsh=MWM0YmhiNGlubHU4Mg==" class="btn instagram"><!-- ... --></a>
-        <a href="https://api.whatsapp.com/send?phone=%2B525530254974" class="btn whatsapp"><!-- ... --></a>
-        <a href="https://open.spotify.com/artist/0SJWwOFAr0Eq16DaDgDxwH?si=j51rUMudR5-rUz5gLCGnKw" class="btn spotify"><!-- ... --></a>
+
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/share/18r737pbnk/" class="btn facebook">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/laorquestaloca?igsh=MWM0YmhiNGlubHU4Mg==" class="btn instagram">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=%2B525530254974" class="btn whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://open.spotify.com/artist/0SJWwOFAr0Eq16DaDgDxwH?si=j51rUMudR5-rUz5gLCGnKw" class="btn spotify">
+                <i class="fab fa-spotify"></i> Spotify
+            </a>
+        </div>
     </div>
 </body>
 </html>
